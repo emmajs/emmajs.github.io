@@ -12,7 +12,7 @@ emmajs.helloWorld = function helloWorld() {
   document.querySelector('body').appendChild(cat);
 };
 
-emmajs.toggleCatchTheMice = function toggleCatchTheMice() {
+emmajs.catchTheMice = function catchTheMice() {
   if(emmajs.miceHunt) {
     document.onmousemove = null;
     emmajs.miceHunt = true;
@@ -29,7 +29,7 @@ emmajs.toggleCatchTheMice = function toggleCatchTheMice() {
   }
 };
 
-emmajs.toggleCatnip = function toggleCatnip() {
+emmajs.catnip = function catnip() {
   if(emmajs.catnip) {
     emmajs.catnip = false;
     document.head.removeChild(emmajs.style);
