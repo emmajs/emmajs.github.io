@@ -16,7 +16,7 @@ emmajs.toggleCatchTheMice = function toggleCatchTheMice() {
     document.querySelector('body').removeChild(emmajs.catCatchingMice);
   } else {
     emmajs.miceHunt = true;
-    emmajs.catCatchingMice = new Image();i
+    emmajs.catCatchingMice = new Image();
     emmajs.catCatchingMice.src = emmajs.cats[0];
     document.querySelector('body').appendChild(emmajs.catCatchingMice);
     emmajs.catCatchingMice.style = 'position: absolute; top: 0; left: 0;';
