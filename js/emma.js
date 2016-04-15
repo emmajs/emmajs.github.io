@@ -13,32 +13,32 @@ emmajs.helloWorld = function helloWorld() {
 };
 
 emmajs.catchTheMice = function catchTheMice() {
-  if(emmajs.miceHunt) {
+  if(emmajs._miceHunt) {
     document.onmousemove = null;
-    emmajs.miceHunt = true;
-    document.querySelector('body').removeChild(emmajs.catCatchingMice);
+    emmajs._miceHunt = true;
+    document.querySelector('body').removeChild(emmajs._catCatchingMice);
   } else {
-    emmajs.miceHunt = true;
-    emmajs.catCatchingMice = new Image();
-    emmajs.catCatchingMice.src = emmajs.cats[0];
-    document.querySelector('body').appendChild(emmajs.catCatchingMice);
-    emmajs.catCatchingMice.style = 'position: absolute; top: 0; left: 0;';
+    emmajs._miceHunt = true;
+    emmajs._catCatchingMice = new Image();
+    emmajs._catCatchingMice.src = emmajs.cats[0];
+    document.querySelector('body').appendChild(emmajs._catCatchingMice);
+    emmajs._catCatchingMice.style = 'position: absolute; top: 0; left: 0;';
     document.onmousemove = function (event) {
-      emmajs.catCatchingMice.style = 'position: absolute; top: '+(event.pageY )+'px; left: '+(event.pageX - emmajs.catCatchingMice.width)+'px;';
+      emmajs._catCatchingMice.style = 'position: absolute; top: '+(event.pageY )+'px; left: '+(event.pageX - emmajs._catCatchingMice.width)+'px;';
     };
   }
 };
 
 emmajs.catnip = function catnip() {
-  if(emmajs.catnip) {
-    emmajs.catnip = false;
+  if(emmajs._catnip) {
+    emmajs._catnip = false;
     document.head.removeChild(emmajs.style);
     var elements = document.querySelectorAll('body *');
     for(var i=0; i<elements.length;i++) {
       elements.item(i).classList.remove('emmajs-catnip');
     }
   } else {
-    emmajs.catnip = true;
+    emmajs._catnip = true;
     emmajs.style = document.createElement("style");
     emmajs.style.appendChild(document.createTextNode('<style type="text/css">@-webkit-keyframes rotating{from{-ms-transform:rotate(0deg);-moz-transform:rotate(0deg);-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg)}to{-ms-transform:rotate(360deg);-moz-transform:rotate(360deg);-webkit-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotating{from{-ms-transform:rotate(0deg);-moz-transform:rotate(0deg);-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg)}to{-ms-transform:rotate(360deg);-moz-transform:rotate(360deg);-webkit-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg)}}.emmajs-catnip{-webkit-animation:rotating 2s linear infinite;-moz-animation:rotating 2s linear infinite;-ms-animation:rotating 2s linear infinite;-o-animation:rotating 2s linear infinite;animation:rotating 2s linear infinite}</style>'));
     document.head.appendChild(emmajs.style);
