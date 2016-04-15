@@ -21,6 +21,10 @@ header h2 {
   font-weight: normal;
 }
 
+h4 {
+  font-weight: normal;
+}
+
 header div {
   display: table-cell;
   vertical-align: middle;
