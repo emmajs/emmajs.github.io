@@ -7,6 +7,9 @@ emmajs.cats = [
 
 emmajs.helloWorld = function helloWorld() {
   document.write('Hello world from emma.js');
+  var cat = new Image();
+  cat.src = emmajs.cats[1];
+  document.querySelector('body').appendChild(cat);
 };
 
 emmajs.toggleCatchTheMice = function toggleCatchTheMice() {
